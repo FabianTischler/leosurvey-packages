@@ -4,5 +4,50 @@ Da ich auf dem eigentlichen Leo-Survey Repo keine Rechte
 zum erstellen von Github-Packages habe, habe ich dieses
 Repo dafür erstellt. Bei jedem Push auf den Master-Branch
 werden das Backend und das Frontend fertig in die Registry
-gepusht. Um diese zu benutzen, wird lokal noch eine Postgres
+gepusht. Um diese zu benutzen, wird lokal noch eine Postgres-DB
 benötigt.
+
+== Anleitung
+
+=== Starten der Datenbank
+
+Starten der Datenbank durch zum Beispiel ein stack.yml-File
+
+[source, yaml]
+----
+version: "1.0"
+
+services:
+  database:
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5432:5432
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+----
+
+[source,bash]
+----
+docker-compose -f stack.yml up
+----
+
+=== Pullen von der Registry
+
+[source, bash]
+----
+docker pull ghcr.io/fabiantischler/leosurvey-backend:latest
+docker pull ghcr.io/fabiantischler/leosurvey-frontend:latest
+----
+
+=== Starten der Images
+
+[source,bash]
+----
+docker run --network host ghcr.io/fabiantischler/leosurvey-backend:1.0
+docker run -p 4200:80/tcp ghcr.io/fabiantischler/leosurvey-frontend
+----
+
+Die Applikation ist erreichbar unter localhost:4200
