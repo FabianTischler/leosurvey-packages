@@ -1,0 +1,135 @@
+<mat-form-field>
+  <input
+    type="text"
+    matInput placeholder="Transactioncode"
+    id="text"
+    name="text"
+    [(ngModel)]="transactioncode"
+  >
+</mat-form-field>
+<div id="btnSubmit2" >
+  <button
+    mat-raised-button color="secondary"
+    class="mdc-button mdc-button--outlined"
+    (click)="load()"
+    >Submit
+  </button>
+</div>
+
+
+<div id="btnSubmit" [ngStyle]="{'visibility':disabled === true ? 'hidden' : '' }">
+  <button
+    mat-raised-button color="secondary"
+    class="mdc-button mdc-button--outlined"
+    routerLink="/congratulation"
+    (click)="saveToDatabase()"
+    >Submit
+  </button>
+</div>
+
+<div id="ds1" [ngStyle]="{'visibility':disabled === true ? 'hidden' : '' }">
+  <table mat-table style="float:left" [dataSource]="dataSource1">
+    <ng-container matColumnDef="q_text">
+      <th mat-header-cell *matHeaderCellDef> Questions </th>
+      <td mat-cell *matCellDef="let question">{{ question.q_text }}</td>
+    </ng-container>
+    <ng-container matColumnDef="q_options">
+      <th mat-header-cell *matHeaderCellDef> Diese Eigenschaft trifft auf meinen Lehrer... </th>
+      <td mat-cell *matCellDef="let fullquestion">
+          <ng-container>
+           <mat-radio-group aria-label="Select an Option">
+              <mat-radio-button value="1" (change)="saveOption(fullquestion.q_options[0])">völlig zu</mat-radio-button>&nbsp;
+              <mat-radio-button value="2" (change)="saveOption(fullquestion.q_options[1])">eher zu </mat-radio-button>&nbsp;
+              <mat-radio-button value="3" (change)="saveOption(fullquestion.q_options[2])">eher nicht zu </mat-radio-button>&nbsp;
+              <mat-radio-button value="4" (change)="saveOption(fullquestion.q_options[3])">überhaupt nicht zu </mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </mat-radio-group><br/>
+
+            <!--{{ o.ao_text }} <mat-checkbox (change)="saveOption(o)"></mat-checkbox><br />-->
+          </ng-container>
+    </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+
+<br>
+
+<div id="ds2" [ngStyle]="{'visibility':disabled === true ? 'hidden' : '' }">
+  <table mat-table style="float:left" [dataSource]="dataSource2">
+    <ng-container matColumnDef="q_text">
+      <th mat-header-cell *matHeaderCellDef> Questions </th>
+      <td mat-cell *matCellDef="let question">{{ question.q_text }}</td>
+    </ng-container>
+    <ng-container matColumnDef="q_options">
+      <th mat-header-cell *matHeaderCellDef> Diese Beschreibung ist... </th>
+      <td mat-cell *matCellDef="let fullquestion">
+        <ng-container>
+         <mat-radio-group aria-label="Select an Option">
+            <mat-radio-button value="1" (change)="saveOption(fullquestion.q_options[0])">völlig richtig</mat-radio-button>&nbsp;
+            <mat-radio-button value="2" (change)="saveOption(fullquestion.q_options[1])">eher richtig</mat-radio-button>&nbsp;
+            <mat-radio-button value="3" (change)="saveOption(fullquestion.q_options[2])">eher falsch</mat-radio-button>&nbsp;
+            <mat-radio-button value="4" (change)="saveOption(fullquestion.q_options[3])">völlig falsch</mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </mat-radio-group><br/>
+          <!--{{ o.ao_text }} <mat-checkbox (change)="saveOption(o)"></mat-checkbox><br />-->
+        </ng-container>
+    </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+
+<br>
+
+<div id="ds3" [ngStyle]="{'visibility':disabled === true ? 'hidden' : '' }">
+  <table mat-table style="float:left" [dataSource]="dataSource3">
+    <ng-container matColumnDef="q_text">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let question">{{ question.q_text }}</td>
+    </ng-container>
+    <ng-container matColumnDef="q_options">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let fullquestion">
+          <ng-container>sehr zufrieden &nbsp;
+           <mat-radio-group aria-label="Select an Option">
+              <mat-radio-button value="1" (change)="saveOption(fullquestion.q_options[0])"></mat-radio-button>
+              <mat-radio-button value="2" (change)="saveOption(fullquestion.q_options[1])"></mat-radio-button>
+              <mat-radio-button value="3" (change)="saveOption(fullquestion.q_options[2])"></mat-radio-button>
+              <mat-radio-button value="4" (change)="saveOption(fullquestion.q_options[3])"></mat-radio-button>
+              <mat-radio-button value="4" (change)="saveOption(fullquestion.q_options[4])"></mat-radio-button>
+            </mat-radio-group> sehr unzufrieden&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+
+            <!--{{ o.ao_text }} <mat-checkbox (change)="saveOption(o)"></mat-checkbox><br />-->
+          </ng-container>
+    </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+
+
+<div id="ds4" style="font-size: 12px" [ngStyle]="{'visibility':disabled === true ? 'hidden' : '' }">
+  <mat-form-field appearance="fill" class="fullwidth" style="margin-right: 2%;" (change)="saveFreetextOne()">
+    <input
+      type="text"
+      matInput placeholder={{dataSource4[0].q_text}}
+      id="text"
+      name="text"
+      [(ngModel)]="freetextanswer1"
+    >
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="fullwidth" style="margin-right: 2%;" (change)="saveFreetextTwo()">
+    <input
+      type="text"
+      matInput placeholder={{dataSource4[1].q_text}}
+      id="text"
+      name="text"
+      [(ngModel)]="freetextanswer2"
+    >
+  </mat-form-field>
+</div>

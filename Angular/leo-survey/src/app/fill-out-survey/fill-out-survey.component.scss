@@ -1,0 +1,21 @@
+#ds1 {
+  float: left;
+}
+#ds2 {
+  clear:both
+}
+#ds3 {
+  clear:both
+}
+#ds4 {
+  clear:both
+}
+.mat-row:nth-child(even){
+  background-color: rgb(236, 236, 236);
+}
+.invisible {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}

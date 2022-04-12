@@ -1,0 +1,27 @@
+= LeoSurvey
+
+== Für Lehrer
+
+=== Anlegen
+
+* Öffnen Sie vm08.htl-leonding.ac.at:8080
+
+* Klicken Sie auf Create new Survey
+
+* Wählen Sie auf dem Slider aus, für wieviele Schüler die Umfrage gemacht werden soll
+
+* Geben Sie die Codes an die Schüler weiter
+
+=== Auswerten
+
+* Klicken Sie auf Get Results
+
+* Wählen Sie aus dem Drop-Down Menü die richtige Umfrage aus
+
+== Für Schüler
+
+* Klicken Sie auf Fill Out Survey
+
+* Geben Sie den Code ein, den Sie von Ihrem Lehrer bekommen haben
+
+* Füllen Sie die Umfrage aus

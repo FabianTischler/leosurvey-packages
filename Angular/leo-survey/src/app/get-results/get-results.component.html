@@ -1,0 +1,54 @@
+<div>
+  <mat-form-field>
+    <mat-select [(formControl)]="control" required>
+      <mat-option *ngFor="let survey of surveyList" [value]="survey">
+        {{ survey.s_id }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="getData()">Choose</button>
+</div>
+
+
+<div id="ds1" [ngStyle]="{'visibility':hidden === true ? 'hidden' : '' }">
+  <table mat-table style="float:left" [dataSource]="dataSource1">
+    <ng-container matColumnDef="q_text">
+      <th mat-header-cell *matHeaderCellDef> Questions </th>
+      <td mat-cell *matCellDef="let howoften">{{ howoften.q_text }}</td>
+    </ng-container>
+    <ng-container matColumnDef="q_options">
+      <th mat-header-cell *matHeaderCellDef> Options </th>
+      <td mat-cell *matCellDef="let howoften">
+        <ng-container *ngFor="let o of howoften.q_options">
+          {{ o.ao_text }} <br/> &nbsp;&nbsp;&nbsp;{{ o.ao_how_often }}<br />
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>
+
+<div id="ds2" [ngStyle]="{'visibility':hidden === true ? 'hidden' : '' }">
+  <h5>An diesem Lehrer gefällt mir: </h5>
+  <ng-container *ngFor="let a of answers">
+    <ul>
+      <li *ngIf="a.q_question.q_id == 41">
+          {{a.a_answer_text}}
+      </li>
+    </ul>
+  </ng-container>
+</div>
+
+<div id="ds3" [ngStyle]="{'visibility':hidden === true ? 'hidden' : '' }">
+  <h5>An diesem Lehrer stört mich: </h5>
+  <ng-container *ngFor="let a of answers">
+    <ul>
+      <li *ngIf="a.q_question.q_id == 42">
+          {{a.a_answer_text}}
+      </li>
+    </ul>
+  </ng-container>
+</div>

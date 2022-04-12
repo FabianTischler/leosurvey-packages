@@ -1,0 +1,35 @@
+= LeoSurvey
+firstname lastname
+1.0.0, yyyy-mm-dd: Some notes
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+== Project Description
+
+The software is for creating Surveys. The creator of the Survey can choose
+between some built-in Questionnaires, or he can create a new one.
+Then he can fill it with his questions. The creator can then share his
+survey with the people who want to participate in the survey.
+
+
+== Team
+
+// <catalog-number><first letter of lastname><first letter of first name>
+// ie
+
+* 25 TF
+* 26 TP
+
+== Documents
+
+* <<project-proposal.adoc#, Project Proposal>> (Projektantrag)
+* <<project-oder.adoc#, Project Order>> (Projektauftrag)
+* <<system-specification.adoc#, System Specification>> (Pflichtenheft)
+* <<leosurvey-presentation-5grade.adoc#, Presentation>>
+
+== External Project Repository
+
+// when an external git-repo exists, include the url here
+

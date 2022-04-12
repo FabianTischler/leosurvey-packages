@@ -1,0 +1,28 @@
+<h5>How many Transactioncodes do you want?</h5>
+<mat-slider
+  thumbLabel
+  tickInterval="1"
+  step="1"
+  min="0"
+  max="50"
+  aria-label="units"
+  [(ngModel)]="trcodecount">
+</mat-slider>
+
+<button mat-raised-button color="primary" (click)="getCodes()">Send</button>
+
+<div id="ds1" [ngStyle]="{'visibility':hidden === true ? 'hidden' : '' }">
+  <table mat-table style="float:left" [dataSource]="dataSource">
+    <ng-container matColumnDef="t_transactioncode">
+      <th mat-header-cell *matHeaderCellDef> Code </th>
+      <td mat-cell *matCellDef="let transactioncode"> {{ transactioncode.t_transactioncode }} </td>
+    </ng-container>
+    <ng-container matColumnDef="t_is_used">
+      <th mat-header-cell *matHeaderCellDef> Is used </th>
+      <td mat-cell *matCellDef="let transactioncode"> {{ transactioncode.t_is_used }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>

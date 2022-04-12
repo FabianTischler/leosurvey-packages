@@ -1,0 +1,19 @@
+@startuml
+printscale weekly
+Project starts the 27th of October 2020
+[project proposal] lasts 3 week
+[project proposal finished] happens at [project proposal]'s end
+[system specs] lasts 4 week
+[system specs] starts at [project proposal]'s end
+[system specs finished] happens at [system specs]'s end
+[Projekt aufsetzen] lasts 2 weeks
+[Projekt aufsetzen] starts at [system specs]'s end
+[erstellung von Templates] lasts 2 week
+[erstellung von Templates] starts at [Projekt aufsetzen]'s end
+[erstellung von Umfragen] lasts 2 week
+[erstellung von Umfragen] starts at [erstellung von Templates]'s end
+[Auswertung der Umfragen] lasts 3 week
+[Auswertung der Umfragen] starts at [erstellung von Umfragen]'s end
+[Datenbank aufsetzen] lasts 2 week
+[Datenbank aufsetzen] starts at [Auswertung der Umfragen]'s end
+@enduml

@@ -1,0 +1,123 @@
+= LeoSurvey
+Trinkl Philip, Tischler Fabian
+1.0.0, 2020-12-14:
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+
+== Pflichtenheft LeoSurvey
+
+
+=== Ausgangssituation
+
+An der HTL Leonding gibt es vier Fachrichtungen (Abteilungen):
+
+ * Informatik
+ * Medientechnik
+ * Elektronik
+ * Medizintechnik
+
+und zusätzlich
+
+ * Abendschule Informatik
+ * Kolleg Informatik
+
+In allen diesen Zweigen wird Informatik mehr oder weniger intensiv unterrichtet.
+
+Das Bestreben einer HTL muss sein, die Qualität der Lehre in allen Bereichen
+zu sichern. Dazu gehört insbesondere die Koordination innerhalb der einzelnen
+Fachbereiche im Bereich "Informatik".
+
+Diese Koordination findet einerseits durch den gesetzlich vorgegebenen Lehrplan
+und andererseits durch schulinterne Präzisierung und Interpretation des Lehrplans.
+
+Der (informationstechnische) Unterricht an der HTL Leonding zeichnet sich durch
+einen hohen Praxisbezug aus, dh. neben einem fundierten Theorieunterricht wird
+Wert auf die praxisnahe Umsetzung in Form von Programmen, SQL-Statements usw. gelegt.
+
+=== Istzustand
+
+Derzeit werden Umfragen über mehrere verschiedene Plattformen durchgeführt, wie zum
+Beispiel auf Strawpoll oder auf Papier.
+
+=== Problemstellung
+
+Es gibt keine schuleinheitliche Plattform für Lehrer oder Schüler um
+Umfragen zu erstellen. Wenn jemand eine Umfrage machen möchte, wird dies
+oft auf unterschiedlichen Plattformen durchgeführt.
+
+=== Datenmodell
+
+[plantuml,wireframe,png]
+
+image::erd.png[]
+
+=== Systemarchitektur
+
+[plantuml,wireframe,png]
+
+image::sysarchitecture.png[]
+
+=== Aufgabenstellung
+
+Erstellung eines Moduls für das übergeordnete System LeoLearn, mit dem
+Umfragen erstellt werden können, man an Umfragen teilnehmen kann und man
+diese Umfragen auswerten kann.
+
+==== Funktionale Anforderungen
+
+[plantuml,wireframe,png]
+
+image::ucd.png[]
+
+==== Nichtfunktionale Anforderungen (NFA)
+
+ * jeder User darf nur einmal pro Umfrage abstimmen
+ * das Tool soll in Deutsch realisiert werden
+ * die Ergebnisse der Umfrage sollen abgespeichert werden
+ * die Umfragen sollen anonym durchführbar sein
+ * die Reaktionszeit des Tools soll um die 100ms betragen
+
+=== Ziele
+
+Die Zurverfügungstellung eines Umfragetools, welches von der HTBLA Leonding
+als Hauptumfragetool genutzt wird.
+
+=== Ergebnis
+
+Ein Tool zur Erstellung von Umfragen mithilfe von verschiedenen Fragebögen, zum
+Teilnehmen an diesen Umfragen und zur grafischen und textuellen Auswertung dieser
+Umfragen.
+
+=== Rahmenbedingungen
+
+ * Es können beliebige Fragebögen (Questionnaire) erstellt werden
+ * Folgende Fragetypen stehen (zumindest) zur Verfügung
+    ** Freitext
+    ** Multiple Choice
+    ** Single Choice
+    ** Ja/Nein-Fragen
+ * Umfragen (Surveys) können erstellt werden
+    ** Zuordnung zu Fragebogen
+    ** Datumsbereich zur Beantwortung der Umfrage
+ * Auswertung der Umfrage
+    ** Grafische Auswertung mit Diagrammen
+    ** Textuelle Darstellung der Freitexte
+
+=== GANTT-Diagramme
+
+==== Erste Einschätzung am Projektbeginn
+
+[plantuml,gantt-protoype,png]
+
+image::gantt.png[]
+
+==== Einschätzung 10.05.2021
+
+[plantuml,new-gantt-0,png]
+
+image::newgantt-0.png[]

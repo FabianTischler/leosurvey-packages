@@ -1,0 +1,56 @@
+= Project Proposal - LeoSurvey
+Trinkl Philip, Tischler Fabian
+1.0.0, 2020-10-12:
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Project Name
+LeoSurvey
+
+=== Client
+HTBLA-Leonding
+
+=== Project Team
+Trinkl Philip +
+Tischler Fabian
+
+=== Project Background
+At the moment, there is no good method for Teachers or Students to create
+Surveys for special Circumstances. If someone wants to make a Survey, he has
+to do it on paper and copy it for everyone who should take part in it.
+
+=== Project Goals
+The main goal of LeoSurvey is to create a tool with which someone can create,
+take part in or evaluate Surveys.
+
+=== Project Functions
+* creating of Questionnaires
+* creating of Surveys
+* textual evaluation
+* graphical evaluation
+
+=== Project Description
+The software is for creating Surveys. The creator of the Survey can choose
+between some built-in Questionnaires, or he can create a new one.
+Then he can fill it with his questions. The creator can then share his
+survey with the people who want to participate in the survey.
+
+=== Stakeholder
+* creator of the survey
+* participants
+
+=== Project Result
+LeoSurvey is a tool to create and take part in Surveys featuring multiple
+Questionnaires like multiple choice or yes/no questions.
+
+=== Project Start
+

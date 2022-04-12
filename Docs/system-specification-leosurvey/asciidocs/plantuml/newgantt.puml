@@ -1,0 +1,9 @@
+@startuml
+printscale weekly
+Project starts the 10th of May 2021
+[Angular App zum Ausfüllen des Fragebogens] lasts 2 week
+[Formular zum Erstellen der Fragebögen] lasts 4 week
+[Formular zum Erstellen der Fragebögen] starts at [Angular App zum Ausfüllen des Fragebogens]'s end
+[Ausweiten des Ausfüll-Formulars für einen beliebigen Fragebogen] lasts 2 weeks
+[Ausweiten des Ausfüll-Formulars für einen beliebigen Fragebogen] starts at [Formular zum Erstellen der Fragebögen]'s end
+@enduml

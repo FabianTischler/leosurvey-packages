@@ -1,0 +1,66 @@
+@startuml
+entity "Questionnaire" as 1{
+    int qn_id
+    String qn_name
+    String qn_description
+}
+entity "Question" as 2 {
+    int q_id
+    String q_text
+    Blob q_image
+    int q_sequenceNumber
+    QuestionType q_type
+    int q_qn_type
+}
+entity "AnswerOption" as 3 {
+    int ao_id
+    String ao_text
+    int ao_value
+    int ao_sequenceNumber
+    int ao_q_id
+}
+entity "ChosenOption" as 4 {
+    int co_id
+    int co_ao_id
+    int co_a_id
+    int co_q_id
+}
+entity "Answer" as 5 {
+    int a_id
+    int a_q_id
+    String a_answer_text
+}
+entity "S_Transaction" as 6 {
+    int tr_id
+    String t_transactioncode
+    boolean t_is_used
+    int s_id
+}
+entity QuestionType {
+    SINGLECHOICE
+    MULTIPLE CHOICE
+    YESORNO
+    FREETEXT
+}
+
+entity "Teacher" as 7 {
+    int t_id
+    String name
+}
+
+entity "Survey" as 8 {
+    int s_id
+    int s_t_id
+    int s_qn_id
+    LocalDate s_date
+}
+
+1 ||..|{ 2
+2 ||..|{ 3
+3 ||..|{ 4
+8 }|..|| 7
+8 ||..|{ 6
+2 ||..|{ 5
+5 ||..|{ 4
+1 ||..|{ 8
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+actor "Lehrer" as l
+actor "Schüler" as s
+rectangle LeoSurvey {
+    usecase "Fragebogen erstellen" as UC1
+    usecase "Befragung erstellen" as UC2
+    usecase "TANs generieren" as UC3
+    usecase "Befragung auswerten" as UC4
+    usecase "Fragebogen ausfüllen" as UC5
+    (UC3) .> (UC2) : extends
+}
+
+l --> UC1
+l --> UC2
+l --> UC4
+s --> UC5
+
+@enduml
