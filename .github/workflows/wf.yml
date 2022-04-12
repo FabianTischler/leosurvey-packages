@@ -29,8 +29,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }} 
-      - name: Build Project
-        run: mvn clean compile quarkus:dev
       - name: Build image
         run: docker build . -f src/main/docker/Dockerfile.native --tag $IMAGE_NAME 
       - name: Push image
